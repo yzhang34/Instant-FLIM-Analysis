@@ -160,7 +160,7 @@ switch figureName
             hold(handles.Axes_PH, 'on')
             theta = linspace(0, pi, 100); radius = 0.5;
             plot(handles.Axes_PH, radius*cos(theta)+0.5, radius*sin(theta), 'k', 'LineWidth', line_width);
-            line([0 1], [0 0], 'Color', 'k', 'LineWidth', line_width);
+            line(handles.Axes_PH, [0 1], [0 0], 'Color', 'k', 'LineWidth', line_width);
             hold(handles.Axes_PH, 'off')
             set(handles.Axes_PH,'DataAspectRatio',[1 1 1])
         end
