@@ -162,7 +162,9 @@ switch figureName
             plot(handles.Axes_PH, radius*cos(theta)+0.5, radius*sin(theta), 'k', 'LineWidth', line_width);
             line(handles.Axes_PH, [0 1], [0 0], 'Color', 'k', 'LineWidth', line_width);
             hold(handles.Axes_PH, 'off')
-            set(handles.Axes_PH,'DataAspectRatio',[1 1 1])
+            set(handles.Axes_PH,'DataAspectRatio',[1 1 1]);
+            set(handles.Axes_PH,'XColor','none');
+            set(handles.Axes_PH,'YColor','none');            
         end
         
     case 'PC'
@@ -197,7 +199,9 @@ switch figureName
             hold(handles.Axes_PC, 'off')
             xlim(handles.Axes_PC, [Gmin, Gmax]);
             ylim(handles.Axes_PC, [Smin, Smax]);
-            set(handles.Axes_PC,'DataAspectRatio',[1 1 1])
+            set(handles.Axes_PC,'DataAspectRatio',[1 1 1]);
+            set(handles.Axes_PC,'XColor','none');
+            set(handles.Axes_PC,'YColor','none');
         end
         
     case 'O'
