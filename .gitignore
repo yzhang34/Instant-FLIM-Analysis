@@ -39,3 +39,7 @@ Thumbs.db
 # Google Drive
 ######################
 *.ini
+
+# generated images
+######################
+*.tif
