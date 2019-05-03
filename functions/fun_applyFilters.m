@@ -14,39 +14,39 @@ if isfield(handles, 'imageG_backup') && isfield(handles, 'imageS_backup') && isf
         switch FilterSelect_val
 
             case 2 % 3x3 Median Filter (1 Time)
-                filtered_G = fun_filterSelect(G_stack, 'median3_x1');
-                filtered_S = fun_filterSelect(S_stack, 'median3_x1');
-                filtered_I = fun_filterSelect(I_stack, 'median3_x1');
+                filtered_G = fun_filterSelect(G_stack, 'median3_x1', 'G');
+                filtered_S = fun_filterSelect(S_stack, 'median3_x1', 'S');
+                filtered_I = fun_filterSelect(I_stack, 'median3_x1', 'I');
 
             case 3 % 3x3 Median Filter (2 Times)
-                filtered_G = fun_filterSelect(G_stack, 'median3_x2');
-                filtered_S = fun_filterSelect(S_stack, 'median3_x2');
-                filtered_I = fun_filterSelect(I_stack, 'median3_x2');            
+                filtered_G = fun_filterSelect(G_stack, 'median3_x2', 'G');
+                filtered_S = fun_filterSelect(S_stack, 'median3_x2', 'S');
+                filtered_I = fun_filterSelect(I_stack, 'median3_x2', 'I');            
 
             case 4 % 3x3 Median Filter (3 Times)
-                filtered_G = fun_filterSelect(G_stack, 'median3_x3');
-                filtered_S = fun_filterSelect(S_stack, 'median3_x3');
-                filtered_I = fun_filterSelect(I_stack, 'median3_x3');            
+                filtered_G = fun_filterSelect(G_stack, 'median3_x3', 'G');
+                filtered_S = fun_filterSelect(S_stack, 'median3_x3', 'S');
+                filtered_I = fun_filterSelect(I_stack, 'median3_x3', 'I');            
 
             case 5 % 5x5 Median Filter (1 Time)
-                filtered_G = fun_filterSelect(G_stack, 'median5_x1');
-                filtered_S = fun_filterSelect(S_stack, 'median5_x1');
-                filtered_I = fun_filterSelect(I_stack, 'median5_x1');            
+                filtered_G = fun_filterSelect(G_stack, 'median5_x1', 'G');
+                filtered_S = fun_filterSelect(S_stack, 'median5_x1', 'S');
+                filtered_I = fun_filterSelect(I_stack, 'median5_x1', 'I');            
 
             case 6 % 5x5 Median Filter (2 Times)
-                filtered_G = fun_filterSelect(G_stack, 'median5_x2');
-                filtered_S = fun_filterSelect(S_stack, 'median5_x2');
-                filtered_I = fun_filterSelect(I_stack, 'median5_x2');
+                filtered_G = fun_filterSelect(G_stack, 'median5_x2', 'G');
+                filtered_S = fun_filterSelect(S_stack, 'median5_x2', 'S');
+                filtered_I = fun_filterSelect(I_stack, 'median5_x2', 'I');
 
             case 7 % 5x5 Median Filter (3 Times)
-                filtered_G = fun_filterSelect(G_stack, 'median5_x3');
-                filtered_S = fun_filterSelect(S_stack, 'median5_x3');
-                filtered_I = fun_filterSelect(I_stack, 'median5_x3');
+                filtered_G = fun_filterSelect(G_stack, 'median5_x3', 'G');
+                filtered_S = fun_filterSelect(S_stack, 'median5_x3', 'S');
+                filtered_I = fun_filterSelect(I_stack, 'median5_x3', 'I');
 
             case 8 % Smoothing Filter
-                filtered_G = fun_filterSelect(G_stack, 'smooth');
-                filtered_S = fun_filterSelect(S_stack, 'smooth');
-                filtered_I = fun_filterSelect(I_stack, 'smooth');
+                filtered_G = fun_filterSelect(G_stack, 'smooth', 'G');
+                filtered_S = fun_filterSelect(S_stack, 'smooth', 'S');
+                filtered_I = fun_filterSelect(I_stack, 'smooth', 'I');
 
             otherwise % No Filter
                 filtered_G = G_stack;

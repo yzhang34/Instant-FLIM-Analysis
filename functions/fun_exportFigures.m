@@ -107,10 +107,13 @@ switch figureName
                     I_stack = handles.imageI;
                     [~,~,slice_n] = size(I_stack);  
                     PH_frame = cell(slice_n, 1);
+                    hwb_progress = waitbar(0, 'Preparing for export ...');
                     for i_slice = 1:slice_n
+                        waitbar(i_slice/slice_n, hwb_progress);
                         I_frame = fun_calcROIoverlap(handles, i_slice);
                         PH_frame{i_slice} = I_frame;
                     end
+                    close(hwb_progress);
                     if get(handles.Check_isOHSV, 'Value')
                         [filename, filepath] = uiputfile({'*.tif'},'Export the image to 32-bit (RGB) tif files.','imageOverlapROIHSV');
                     else

@@ -1,11 +1,15 @@
-function [ filtered_stack ] = fun_filterSelect( raw_stack, mode )
+function [ filtered_stack ] = fun_filterSelect( raw_stack, mode, message)
 %FUN_FILTERSELECT Summary of this function goes here
 %   Detailed explanation goes here
 
 [n_x, n_y, n_z] = size(raw_stack);
 filtered_stack = zeros(n_x, n_y, n_z);
 
+
+hwb_progress = waitbar(0, ['Filtering ', message, ' ...']);
 for iz = 1:n_z
+    
+    waitbar(iz/n_z, hwb_progress);
     
     raw_image = raw_stack(:, :, iz);
     
@@ -38,9 +42,13 @@ for iz = 1:n_z
             coeff = [1, 1, 1; 1, 2, 1; 1, 1, 1];
             filtered_image = imfilter(raw_image, coeff, 'symmetric')/sum(coeff(:));
     end
-
+    
+    
     filtered_stack(:, :, iz) = filtered_image;
 end
+close(hwb_progress);
+
+
 
 
 end

@@ -15,12 +15,17 @@ tau_stack = mat2gray(tau_stack, [MinL MaxL]);
 I_stack = mat2gray(I_stack,[Imin Imax]);
 
 
+hwb_progress = waitbar(0, 'Calculating ...');    
 for i_slice = 1:n_slice
+    
+    waitbar(i_slice/n_slice, hwb_progress);
+    
     % intensity
     gray_I_image = I_stack(:,:,i_slice);
 
     % lifetime
     gray_tau_image = hue_max + tau_stack(:,:,i_slice) * (hue_min - hue_max); % maybe need to change?
+
 
 
     % combine lifetime with image
@@ -30,6 +35,7 @@ for i_slice = 1:n_slice
     hsv_image(:,:,3) = gray_I_image; % value
     rgb_stack(:,:,:,i_slice) = hsv2rgb(hsv_image);
 end
+close(hwb_progress);
 
 
 end
