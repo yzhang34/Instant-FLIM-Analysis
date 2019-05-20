@@ -5,6 +5,11 @@ function [ filtered_stack ] = fun_filterSelect( raw_stack, mode, message)
 [n_x, n_y, n_z] = size(raw_stack);
 filtered_stack = zeros(n_x, n_y, n_z);
 
+if strcmp(mode, 'none')
+    filtered_stack = raw_stack;
+    return
+end
+
 
 hwb_progress = waitbar(0, ['Filtering ', message, ' ...']);
 for iz = 1:n_z

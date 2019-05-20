@@ -14,51 +14,35 @@ if isfield(handles, 'imageG_backup') && isfield(handles, 'imageS_backup') && isf
         switch FilterSelect_val
 
             case 2 % 3x3 Median Filter (1 Time)
-                filtered_G = fun_filterSelect(G_stack, 'median3_x1', 'G');
-                filtered_S = fun_filterSelect(S_stack, 'median3_x1', 'S');
-                filtered_I = fun_filterSelect(I_stack, 'median3_x1', 'I');
+                filter_name = 'median3_x1';
 
             case 3 % 3x3 Median Filter (2 Times)
-                filtered_G = fun_filterSelect(G_stack, 'median3_x2', 'G');
-                filtered_S = fun_filterSelect(S_stack, 'median3_x2', 'S');
-                filtered_I = fun_filterSelect(I_stack, 'median3_x2', 'I');            
+                filter_name = 'median3_x2';        
 
             case 4 % 3x3 Median Filter (3 Times)
-                filtered_G = fun_filterSelect(G_stack, 'median3_x3', 'G');
-                filtered_S = fun_filterSelect(S_stack, 'median3_x3', 'S');
-                filtered_I = fun_filterSelect(I_stack, 'median3_x3', 'I');            
+                filter_name = 'median3_x3';             
 
             case 5 % 5x5 Median Filter (1 Time)
-                filtered_G = fun_filterSelect(G_stack, 'median5_x1', 'G');
-                filtered_S = fun_filterSelect(S_stack, 'median5_x1', 'S');
-                filtered_I = fun_filterSelect(I_stack, 'median5_x1', 'I');            
+                filter_name = 'median5_x1';             
 
             case 6 % 5x5 Median Filter (2 Times)
-                filtered_G = fun_filterSelect(G_stack, 'median5_x2', 'G');
-                filtered_S = fun_filterSelect(S_stack, 'median5_x2', 'S');
-                filtered_I = fun_filterSelect(I_stack, 'median5_x2', 'I');
+                filter_name = 'median5_x2';    
 
             case 7 % 5x5 Median Filter (3 Times)
-                filtered_G = fun_filterSelect(G_stack, 'median5_x3', 'G');
-                filtered_S = fun_filterSelect(S_stack, 'median5_x3', 'S');
-                filtered_I = fun_filterSelect(I_stack, 'median5_x3', 'I');
+                filter_name = 'median5_x3';    
 
             case 8 % Smoothing Filter
-                filtered_G = fun_filterSelect(G_stack, 'smooth', 'G');
-                filtered_S = fun_filterSelect(S_stack, 'smooth', 'S');
-                filtered_I = fun_filterSelect(I_stack, 'smooth', 'I');
+                filter_name = 'smooth';    
 
             otherwise % No Filter
-                filtered_G = G_stack;
-                filtered_S = S_stack;
-                filtered_I = I_stack;
+                filter_name = 'none';    
 
         end
-
-        handles.imageG = filtered_G; 
-        handles.imageS = filtered_S;
+       
+        handles.imageG = fun_filterSelect(G_stack, filter_name, 'G');
+        handles.imageS = fun_filterSelect(S_stack, filter_name, 'S');
         if get(handles.Check_IntensityFilter, 'Value')
-            handles.imageI = filtered_I;      
+            handles.imageI = fun_filterSelect(I_stack, filter_name, 'I'); 
         else
             handles.imageI = I_stack;
         end

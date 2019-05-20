@@ -22,7 +22,7 @@ function varargout = PM_FLIM_GUI(varargin)
 
 % Edit the above text to modify the response to help PM_FLIM_GUI
 
-% Last Modified by GUIDE v2.5 29-Jan-2019 21:32:02
+% Last Modified by GUIDE v2.5 20-May-2019 11:54:14
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -952,16 +952,23 @@ custom_function(hObject, handles);
 
 
 
+function Edit_GSscale_Callback(hObject, eventdata, handles)
 
 
+function Edit_GSscale_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_GSscale (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
 
 
-
-
-
-
-
-
-
-
-
+function Button_GSscale_Callback(hObject, eventdata, handles)
+% hObject    handle to Button_GSscale (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+fun_applyGSscale(hObject, handles);
