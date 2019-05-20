@@ -42,4 +42,4 @@ Thumbs.db
 
 # generated images
 ######################
-*.tif
+# *.tif
