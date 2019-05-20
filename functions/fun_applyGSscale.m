@@ -18,6 +18,9 @@ if isfield(handles, 'imageG_backup') && isfield(handles, 'imageS_backup')
 
         fun_updateFigures(handles, -1, 'G');
         fun_updateFigures(handles, -1, 'S'); 
+        
+        % reset the applied filter
+        set(handles.Pop_FilterSelect, 'Value', 1);
 
     else
         msgbox('G, S sizes not match.', 'Error','error');

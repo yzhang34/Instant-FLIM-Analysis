@@ -10,6 +10,12 @@ if isfield(handles, 'imageG_backup') && isfield(handles, 'imageS_backup') && isf
     
     if isequal(size(G_stack),size(S_stack)) && isequal(size(G_stack),size(I_stack))
         
+        
+        % apply GS scale on backed up G, S stacks
+        GS_scale = str2double(get(handles.Edit_GSscale, 'String'));
+        G_stack = G_stack * GS_scale;
+        S_stack = S_stack * GS_scale;
+        
         FilterSelect_val = get(handles.Pop_FilterSelect, 'Value');
         switch FilterSelect_val
 

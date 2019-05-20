@@ -22,7 +22,7 @@ function varargout = PM_FLIM_GUI(varargin)
 
 % Edit the above text to modify the response to help PM_FLIM_GUI
 
-% Last Modified by GUIDE v2.5 20-May-2019 11:54:14
+% Last Modified by GUIDE v2.5 20-May-2019 13:21:56
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -953,6 +953,7 @@ custom_function(hObject, handles);
 
 
 function Edit_GSscale_Callback(hObject, eventdata, handles)
+fun_applyGSscale(hObject, handles);
 
 
 function Edit_GSscale_CreateFcn(hObject, eventdata, handles)
@@ -967,8 +968,4 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-function Button_GSscale_Callback(hObject, eventdata, handles)
-% hObject    handle to Button_GSscale (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-fun_applyGSscale(hObject, handles);
+
