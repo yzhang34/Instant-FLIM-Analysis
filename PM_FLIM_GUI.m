@@ -22,7 +22,7 @@ function varargout = PM_FLIM_GUI(varargin)
 
 % Edit the above text to modify the response to help PM_FLIM_GUI
 
-% Last Modified by GUIDE v2.5 20-May-2019 13:21:56
+% Last Modified by GUIDE v2.5 20-May-2019 22:10:23
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -966,6 +966,3 @@ function Edit_GSscale_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
-
-
