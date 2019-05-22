@@ -143,7 +143,8 @@ switch figureName
             % this way to avoid deleting ROIs
             if ~isfield(handles, 'im_PH')
                 im_PH = imagesc('Parent',handles.Axes_PH, 'XData',[Gmin, Gmax],'YData',[Smin, Smax],'CData',PH_matrix);
-                handles.im_PH = im_PH; guidata(handles.Axes_PH,handles);
+                handles.im_PH = im_PH; 
+                guidata(handles.Axes_PH,handles);
             else
                 im_PH = handles.im_PH;
                 im_PH.CData = PH_matrix;

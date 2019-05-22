@@ -93,30 +93,45 @@ switch mouse_mode
                             handles.ROI1.Position = new_pos;
                             handles.ROI1_r = radius;
                             handles.ROI1_c = center;
+                            set(handles.Edit_ROI1r, 'String', num2str(radius));
+                            set(handles.Edit_ROI1c_G, 'String', num2str(center(1)));
+                            set(handles.Edit_ROI1c_S, 'String', num2str(center(2)));
                         end
                     case 2
                         if isfield(handles, 'ROI2')
                             handles.ROI2.Position = new_pos;
                             handles.ROI2_r = radius;
                             handles.ROI2_c = center;
+                            set(handles.Edit_ROI2r, 'String', num2str(radius));
+                            set(handles.Edit_ROI2c_G, 'String', num2str(center(1)));
+                            set(handles.Edit_ROI2c_S, 'String', num2str(center(2)));                            
                         end 
                     case 3
                         if isfield(handles, 'ROI3')
                             handles.ROI3.Position = new_pos;
                             handles.ROI3_r = radius;
                             handles.ROI3_c = center;
+                            set(handles.Edit_ROI3r, 'String', num2str(radius));
+                            set(handles.Edit_ROI3c_G, 'String', num2str(center(1)));
+                            set(handles.Edit_ROI3c_S, 'String', num2str(center(2)));                            
                         end 
                     case 4
                         if isfield(handles, 'ROI4')
                             handles.ROI4.Position = new_pos;
                             handles.ROI4_r = radius;
                             handles.ROI4_c = center;
+                            set(handles.Edit_ROI4r, 'String', num2str(radius));
+                            set(handles.Edit_ROI4c_G, 'String', num2str(center(1)));
+                            set(handles.Edit_ROI4c_S, 'String', num2str(center(2)));                            
                         end
                     case 5
                         if isfield(handles, 'ROI5')
                             handles.ROI5.Position = new_pos;
                             handles.ROI5_r = radius;
                             handles.ROI5_c = center;
+                            set(handles.Edit_ROI5r, 'String', num2str(radius));
+                            set(handles.Edit_ROI5c_G, 'String', num2str(center(1)));
+                            set(handles.Edit_ROI5c_S, 'String', num2str(center(2)));                            
                         end 
                 end
                 guidata(hObject,handles) 

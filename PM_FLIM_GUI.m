@@ -22,7 +22,7 @@ function varargout = PM_FLIM_GUI(varargin)
 
 % Edit the above text to modify the response to help PM_FLIM_GUI
 
-% Last Modified by GUIDE v2.5 20-May-2019 22:10:23
+% Last Modified by GUIDE v2.5 21-May-2019 18:28:22
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -224,7 +224,6 @@ function Button_LifetimeHist_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 fun_lifetimeHist(hObject, handles);
-
 
 function Button_ApplyFilter_Callback(hObject, eventdata, handles)
 % hObject    handle to Button_ApplyFilter (see GCBO)
@@ -472,6 +471,20 @@ function Pop_OLabels_CreateFcn(hObject, eventdata, handles)
 % handles    empty - handles not created until after all CreateFcns called
 
 % Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_GSscale_Callback(hObject, eventdata, handles)
+fun_applyGSscale(hObject, handles);
+
+function Edit_GSscale_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_GSscale (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
 %       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
@@ -764,6 +777,8 @@ function Button_ExportSummary_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 fun_exportFigures(handles, 'Summary');
 
+
+
 %%%%%%%%%%%% GUI Functions for Plotting ROIs %%%%%%%%%%%%
 
 function Radio_None_Callback(hObject, eventdata, handles)
@@ -777,6 +792,7 @@ function Radio_ROI3_Callback(hObject, eventdata, handles)
 function Radio_ROI4_Callback(hObject, eventdata, handles)
 
 function Radio_ROI5_Callback(hObject, eventdata, handles)
+
 
 function Check_ROI1_Callback(hObject, eventdata, handles)
 % hObject    handle to Check_ROI1 (see GCBO)
@@ -852,6 +868,221 @@ if isfield(handles, 'ROI1')
     end
 end
 fun_updateFigures(handles, round(get(handles.Slider_O, 'Value')), 'O');
+
+
+function Edit_ROI1r_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 1);
+
+function Edit_ROI1r_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI1r (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI2r_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 2);
+
+function Edit_ROI2r_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI2r (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI3r_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 3);
+
+function Edit_ROI3r_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI3r (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI4r_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 4);
+
+function Edit_ROI4r_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI4r (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI5r_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 5);
+
+function Edit_ROI5r_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI5r (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+function Edit_ROI1c_G_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 1);
+
+function Edit_ROI1c_G_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI1c_G (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI2c_G_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 2);
+
+function Edit_ROI2c_G_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI2c_G (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI3c_G_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 3);
+
+function Edit_ROI3c_G_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI3c_G (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI4c_G_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 4);
+
+function Edit_ROI4c_G_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI4c_G (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI5c_G_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 5);
+
+function Edit_ROI5c_G_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI5c_G (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+function Edit_ROI1c_S_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 1);
+
+function Edit_ROI1c_S_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI1c_S (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI2c_S_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 2);
+
+function Edit_ROI2c_S_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI2c_S (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI3c_S_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 3);
+
+function Edit_ROI3c_S_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI3c_S (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI4c_S_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 4);
+
+function Edit_ROI4c_S_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI4c_S (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Edit_ROI5c_S_Callback(hObject, eventdata, handles)
+fun_updateROIrc(hObject, handles, 5);
+
+function Edit_ROI5c_S_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Edit_ROI5c_S (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
 
 
 
@@ -942,6 +1173,26 @@ end
 
 
 
+%%%%%%%%%%%% GUI Functions for Save and Load State Operations %%%%%%%%%%%%
+
+function Button_SaveState_Callback(hObject, eventdata, handles)
+% hObject    handle to Button_SaveState (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+fun_saveGUIstate(handles);
+
+
+function Button_LoadState_Callback(hObject, eventdata, handles)
+% hObject    handle to Button_LoadState (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+fun_loadGUIstate(handles, hObject);
+
+
+
+
+
+
 
 %%%%%%%%%%%% Custom Functions %%%%%%%%%%%%
 function Button_Custom_Callback(hObject, eventdata, handles)
@@ -952,17 +1203,3 @@ custom_function(hObject, handles);
 
 
 
-function Edit_GSscale_Callback(hObject, eventdata, handles)
-fun_applyGSscale(hObject, handles);
-
-
-function Edit_GSscale_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to Edit_GSscale (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
