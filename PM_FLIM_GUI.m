@@ -22,7 +22,7 @@ function varargout = PM_FLIM_GUI(varargin)
 
 % Edit the above text to modify the response to help PM_FLIM_GUI
 
-% Last Modified by GUIDE v2.5 23-May-2019 16:06:23
+% Last Modified by GUIDE v2.5 05-Jun-2019 15:11:05
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -1184,7 +1184,6 @@ function Button_SaveState_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 fun_saveGUIstate(handles);
 
-
 function Button_LoadState_Callback(hObject, eventdata, handles)
 % hObject    handle to Button_LoadState (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -1194,18 +1193,16 @@ fun_loadGUIstate(handles, hObject);
 
 
 
+%%%%%%%%%%%% GUI Functions for Displaying Segmented Results %%%%%%%%%%%%
 
-
-
-%%%%%%%%%%%% Custom Functions %%%%%%%%%%%%
-function Button_Custom_Callback(hObject, eventdata, handles)
-% hObject    handle to Button_Custom (see GCBO)
+function Button_DisplaySegments_Callback(hObject, eventdata, handles)
+% hObject    handle to Button_DisplaySegments (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-custom_function(hObject, handles);
+fun_dispSegChannels(handles);
 
-
-
-
-
-
+function Button_ExportSegments_Callback(hObject, eventdata, handles)
+% hObject    handle to Button_ExportSegments (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+fun_exportSegChannels(handles);
