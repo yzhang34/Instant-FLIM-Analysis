@@ -5,6 +5,8 @@ function [] = fun_updateFigures(handles, slice_idx, figureName)
 % Set plotting parameters
 marker_size = 2;
 line_width = 2;
+narrow_ratio = 1;
+
 
 switch figureName
     
@@ -160,8 +162,8 @@ switch figureName
             set(handles.Axes_PH,'XTick',[],'YTick',[]);
             hold(handles.Axes_PH, 'on')
             theta = linspace(0, pi, 100); radius = 0.5;
-            plot(handles.Axes_PH, radius*cos(theta)+0.5, radius*sin(theta), 'k', 'LineWidth', line_width);
-            line([0 1], [0 0], 'Color', 'k', 'LineWidth', line_width, 'Parent', handles.Axes_PH);
+            plot(handles.Axes_PH, radius*cos(theta)+0.5, radius*sin(theta), 'k', 'LineWidth', line_width/narrow_ratio);
+            line([0 1], [0 0], 'Color', 'k', 'LineWidth', line_width/narrow_ratio, 'Parent', handles.Axes_PH);
             hold(handles.Axes_PH, 'off')
             set(handles.Axes_PH,'DataAspectRatio',[1 1 1]);
             set(handles.Axes_PH,'XColor','none');
@@ -195,8 +197,8 @@ switch figureName
             end
             plot(handles.Axes_PC, Cluster_C(:,1),Cluster_C(:,2),'kx','MarkerSize',marker_size+4,'LineWidth', line_width)
             theta = linspace(0, pi, 100); radius = 0.5;
-            plot(handles.Axes_PC, radius*cos(theta)+0.5, radius*sin(theta), 'k', 'LineWidth', line_width);
-            line([0 1], [0 0], 'Color', 'k', 'LineWidth', line_width, 'Parent', handles.Axes_PC);
+            plot(handles.Axes_PC, radius*cos(theta)+0.5, radius*sin(theta), 'k', 'LineWidth', line_width/narrow_ratio);
+            line([0 1], [0 0], 'Color', 'k', 'LineWidth', line_width/narrow_ratio, 'Parent', handles.Axes_PC);
             hold(handles.Axes_PC, 'off')
             xlim(handles.Axes_PC, [Gmin, Gmax]);
             ylim(handles.Axes_PC, [Smin, Smax]);
