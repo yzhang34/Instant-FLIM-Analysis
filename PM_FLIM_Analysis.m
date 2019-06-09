@@ -1,35 +1,35 @@
-function varargout = PM_FLIM_GUI(varargin)
-% PM_FLIM_GUI MATLAB code for PM_FLIM_GUI.fig
-%      PM_FLIM_GUI, by itself, creates a new PM_FLIM_GUI or raises the existing
+function varargout = PM_FLIM_Analysis(varargin)
+% PM_FLIM_Analysis MATLAB code for PM_FLIM_Analysis.fig
+%      PM_FLIM_Analysis, by itself, creates a new PM_FLIM_Analysis or raises the existing
 %      singleton*.
 %
-%      H = PM_FLIM_GUI returns the handle to a new PM_FLIM_GUI or the handle to
+%      H = PM_FLIM_Analysis returns the handle to a new PM_FLIM_Analysis or the handle to
 %      the existing singleton*.
 %
-%      PM_FLIM_GUI('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in PM_FLIM_GUI.M with the given input arguments.
+%      PM_FLIM_Analysis('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in PM_FLIM_Analysis.M with the given input arguments.
 %
-%      PM_FLIM_GUI('Property','Value',...) creates a new PM_FLIM_GUI or raises the
+%      PM_FLIM_Analysis('Property','Value',...) creates a new PM_FLIM_Analysis or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before PM_FLIM_GUI_OpeningFcn gets called.  An
+%      applied to the GUI before PM_FLIM_Analysis_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to PM_FLIM_GUI_OpeningFcn via varargin.
+%      stop.  All inputs are passed to PM_FLIM_Analysis_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help PM_FLIM_GUI
+% Edit the above text to modify the response to help PM_FLIM_Analysis
 
-% Last Modified by GUIDE v2.5 05-Jun-2019 17:51:00
+% Last Modified by GUIDE v2.5 09-Jun-2019 15:32:19
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @PM_FLIM_GUI_OpeningFcn, ...
-                   'gui_OutputFcn',  @PM_FLIM_GUI_OutputFcn, ...
+                   'gui_OpeningFcn', @PM_FLIM_Analysis_OpeningFcn, ...
+                   'gui_OutputFcn',  @PM_FLIM_Analysis_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -43,21 +43,21 @@ else
 end
 % End initialization code - DO NOT EDIT
 
-% --- Executes just before PM_FLIM_GUI is made visible.
-function PM_FLIM_GUI_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before PM_FLIM_Analysis is made visible.
+function PM_FLIM_Analysis_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to PM_FLIM_GUI (see VARARGIN)
+% varargin   command line arguments to PM_FLIM_Analysis (see VARARGIN)
 
-% Choose default command line output for PM_FLIM_GUI
+% Choose default command line output for PM_FLIM_Analysis
 handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes PM_FLIM_GUI wait for user response (see UIRESUME)
+% UIWAIT makes PM_FLIM_Analysis wait for user response (see UIRESUME)
 % uiwait(handles.Figure_PM_FLIM);
 
 
@@ -92,7 +92,7 @@ set(handles.Check_ROI5, 'BackgroundColor', cc_ROIs(1,:));
 set(handles.Check_ROI5, 'ForegroundColor', 'white');
 
 % --- Outputs from this function are returned to the command line.
-function varargout = PM_FLIM_GUI_OutputFcn(hObject, eventdata, handles) 
+function varargout = PM_FLIM_Analysis_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
