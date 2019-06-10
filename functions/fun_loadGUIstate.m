@@ -9,6 +9,8 @@ if isfield(handles, 'GSgood')
         load([pathname, filename], 'state');
     end
     
+    % delete the original ROIs before loading states
+    delete(handles.Axes_PH.Children(isgraphics(handles.Axes_PH.Children,'rectangle')));
 
     set(handles.Edit_GSscale, 'string',  state.Edit_GSscale);
     set(handles.Edit_MinPerc, 'string',  state.Edit_MinPerc);
@@ -94,6 +96,8 @@ if isfield(handles, 'GSgood')
         str2double(get(handles.Edit_ROI5c_S, 'string'));];
     
     guidata(hObject,handles); 
+    
+    fun_updateFigures(handles, round(get(handles.Slider_O, 'Value')), 'O');
     
 else
     msgbox('Please calculate phasors first.', 'Error','error');
