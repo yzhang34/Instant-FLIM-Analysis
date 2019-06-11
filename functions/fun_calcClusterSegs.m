@@ -22,6 +22,8 @@ disp_stack = zeros(size(I_stack,1), size(I_stack,2), 3, n_z);
 for i_z = 1:n_z  
     % empty pixels being white pixels
     disp_stack(:,:,:,i_z) = ones(size(I_stack,1), size(I_stack,2), 3);
+    % empty pixels being black pixels
+    % disp_stack(:,:,:,i_z) = zeros(size(I_stack,1), size(I_stack,2), 3);
 end
 
 
