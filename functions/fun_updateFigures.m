@@ -195,7 +195,7 @@ switch figureName
                         'MarkerSize',marker_size)
                 end
             end
-            plot(handles.Axes_PC, Cluster_C(:,1),Cluster_C(:,2),'kx','MarkerSize',marker_size+4,'LineWidth', line_width)
+            plot(handles.Axes_PC, Cluster_C(:,1),Cluster_C(:,2),'kx','MarkerSize',(marker_size+4)/narrow_ratio,'LineWidth', line_width)
             theta = linspace(0, pi, 100); radius = 0.5;
             plot(handles.Axes_PC, radius*cos(theta)+0.5, radius*sin(theta), 'k', 'LineWidth', line_width/narrow_ratio);
             line([0 1], [0 0], 'Color', 'k', 'LineWidth', line_width/narrow_ratio, 'Parent', handles.Axes_PC);
