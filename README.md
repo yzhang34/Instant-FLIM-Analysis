@@ -1,6 +1,5 @@
-# PM-FLIM-Analysis
-In vivo high-speed, long-term, four-dimensional phase multiplexing FLIM in intact brains
-
+# Instant-FLIM-Analysis
+An open-source Matlab program to analyze the instant FLIM imaging data
 
 ## License & Copyright
 © 2019 Yide Zhang, University of Notre Dame
