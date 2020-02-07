@@ -1,5 +1,5 @@
 # Instant-FLIM-Analysis
-An open-source Matlab program that analyzes the [instant FLIM](https://www.biorxiv.org/content/10.1101/2020.02.05.936039v1) imaging data
+An open-source Matlab program that analyzes the [instant FLIM](https://www.biorxiv.org/content/10.1101/2020.02.05.936039v1) imaging data.
 
 ```latex
 @article {InstantFLIM2020,
